@@ -9,3 +9,4 @@ Day 2 -
   2. added script to start the project
   3. added --env-file flag instead of using dotenv package
   4. succesfully started the project and connected to mongodb
+  5. created the first api route with controller

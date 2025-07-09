@@ -16,3 +16,8 @@ Day 3 -
   2. logout function completed
   3. sign function completed
   4. cookies added
+
+Day 4 -
+  1. Error handling added
+  2. deployed on render
+  3. url - https://chess-6b1s.onrender.com

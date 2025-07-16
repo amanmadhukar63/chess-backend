@@ -5,7 +5,7 @@ import userRouter from './routes/user.route.js';
 const app = express();
 
 const corsOptions = {
-  origin: "*",
+  origin: ["http://localhost:3000","https://aman-next.loca.lt"],
   headers: ["Content-Type"],
   credentials: true,
 };

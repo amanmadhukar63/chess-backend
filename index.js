@@ -12,7 +12,7 @@ const server = http.createServer(app);
 const io = new Server(server, {
   path: "/api/socketio", // Optional, if you want to namespace it
   cors: {
-    origin: ["http://localhost:3000", "https://aman-next.loca.lt"],
+    origin: ["http://localhost:3000", "https://chessui.vercel.app"],
     credentials: true,
   }
 });

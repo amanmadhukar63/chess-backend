@@ -5,7 +5,7 @@ import userRouter from './routes/user.route.js';
 const app = express();
 
 const corsOptions = {
-  origin: ["http://localhost:3000","https://aman-next.loca.lt"],
+  origin: ["http://localhost:3000","https://chessui.vercel.app"],
   headers: ["Content-Type"],
   credentials: true,
 };

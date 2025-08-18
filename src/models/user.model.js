@@ -9,40 +9,48 @@ const userSchema = new Schema({
   },
   email: {
     type: String,
-    required: true
+    required: true,
+    unique: true,
+    trim: true
   },
-  password: {
+  password_hash: {
     type: String,
     required: true
   },
   username: {
     type: String,
-    required: true
+    required: true,
+    trim: true,
+    unique: true
   },
-  role: {
+  avtar_url: {
     type: String,
-    default: 'USER'
+    required: false,
+    default: null
   },
-  isVerified: {
-    type: Boolean,
-    default: false
+  country: {
+    type: String,
+    required: false,
+    default: 'India'
   },
-  otp: {
-    type: String
+  rating: {
+    type: Number,
+    required: false,
+    default: 1200
   }
-});
+}, { timestamps: true});
 
 // Hash password before saving user
 userSchema.pre('save', async function (next) {
-  if (this.isModified('password')){
+  if (this.isModified('password_hash')){
     const salt = await bcrypt.genSalt(10);
-    this.password = await bcrypt.hash(this.password, salt);
+    this.password_hash = await bcrypt.hash(this.password_hash, salt);
   }
   next();
 });
 
 userSchema.methods.comparePassword = async function (password){
-  return await bcrypt.compare(password, this.password);
+  return await bcrypt.compare(password, this.password_hash);
 }
 
 const User = model('users', userSchema);
